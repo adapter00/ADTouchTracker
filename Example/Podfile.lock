@@ -5,7 +5,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - Nimble (3.2.0)
+  - Nimble (5.1.1)
   - Nimble-Snapshots (4.3.0):
     - Nimble-Snapshots/Core (= 4.3.0)
   - Nimble-Snapshots/Core (4.3.0):
@@ -17,21 +17,21 @@ PODS:
 DEPENDENCIES:
   - ADTouchTracker (from `../`)
   - FBSnapshotTestCase
-  - Nimble (~> 3.0)
+  - Nimble (~> 5.0)
   - Nimble-Snapshots
-  - Quick (~> 0.8)
+  - Quick
 
 EXTERNAL SOURCES:
   ADTouchTracker:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ADTouchTracker: 7ef2c02274fdbf7d0dcb16e0f3738028455876d1
+  ADTouchTracker: 7551fa87583b37594e0f9c824caa5925269cc81d
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Nimble-Snapshots: 4ba722c35b73a680cbd856e4bc22076dfb8085d4
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
 
-PODFILE CHECKSUM: 0e89534916c362ffa7f33c32f8c06b1a8a378e80
+PODFILE CHECKSUM: 0b846f9f718532341bf2c14ac2a3ebd774c92298
 
 COCOAPODS: 1.0.0.beta.4

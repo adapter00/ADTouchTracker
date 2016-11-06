@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0A2EC6DFA5DB1285A7C3161787D199D1'
+               BlueprintIdentifier = '862D3C7AD251BFDB6B2C096031EE6CB9'
                BlueprintName = 'ADTouchTracker'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ADTouchTracker.framework'>

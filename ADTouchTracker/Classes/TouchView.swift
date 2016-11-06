@@ -12,11 +12,11 @@ import UIKit
 /// Touch View Builder, Hold and Remove view instance
 internal class TouchViewBuilder {
     static let sharedInstance = TouchViewBuilder()
-    private let viewSize = CGSize(width: 40, height: 40)
-    private var viewHolder = [TapFingerView]()
-    private init() { }
+    fileprivate let viewSize = CGSize(width: 40, height: 40)
+    fileprivate var viewHolder = [TapFingerView]()
+    fileprivate init() { }
     
-    func buildByPoint(points:[CGPoint]) -> [TapFingerView] {
+    func buildByPoint(_ points:[CGPoint]) -> [TapFingerView] {
         self.viewHolder.forEach{ $0.removeFromSuperview()}
         self.viewHolder = points.flatMap{
             let view = TapFingerView(frame: CGRect(origin: $0, size: viewSize))

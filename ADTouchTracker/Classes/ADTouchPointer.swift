@@ -11,21 +11,21 @@ import UIKit
 
 
 /// Build Tracking Pointer View
-public class ADTouchTracker {
+open class ADTouchTracker {
     /// Start Tracking
-    public func startTracking() {
+    open func startTracking() {
         self.enableTracking = true
     }
     /// End Tracking
-    public func stopTracking() {
+    open func stopTracking() {
         self.enableTracking = false
     }
     
     /// Singleton instance
-    public static var sharedInstance = ADTouchTracker()
+    open static var sharedInstance = ADTouchTracker()
     
     /// Enable Tracking Mode
-    private var enableTracking: Bool = false {
+    fileprivate var enableTracking: Bool = false {
         didSet {
             if enableTracking {
                 guard let keyWindow = UIApplication.shared.keyWindow else {
@@ -36,7 +36,7 @@ public class ADTouchTracker {
         }
     }
     
-    private init() {
+    fileprivate init() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecome), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
     }
     
@@ -46,7 +46,7 @@ public class ADTouchTracker {
             guard let keyWindow = UIApplication.shared.keyWindow,let touches = from.allTouches else {
                 return
             }
-            TouchViewBuilder.sharedInstance.buildByPoint(points: touches.filter{ !($0.phase == UITouchPhase.cancelled || $0.phase == UITouchPhase.ended)}.flatMap{ return $0.location(in: keyWindow)}).forEach{
+            TouchViewBuilder.sharedInstance.buildByPoint(touches.filter{ !($0.phase == UITouchPhase.cancelled || $0.phase == UITouchPhase.ended)}.flatMap{ return $0.location(in: keyWindow)}).forEach{
                 keyWindow.addSubview($0)
             }
         }
