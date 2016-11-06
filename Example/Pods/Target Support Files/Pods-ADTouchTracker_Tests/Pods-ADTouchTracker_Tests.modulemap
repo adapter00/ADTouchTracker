@@ -1,0 +1,6 @@
+framework module Pods_ADTouchTracker_Tests {
+  umbrella header "Pods-ADTouchTracker_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

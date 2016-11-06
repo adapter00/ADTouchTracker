@@ -1,0 +1,22 @@
+{
+  "name": "ADTouchTracker",
+  "version": "0.1.0",
+  "summary": "A short description of ADTouchTracker.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/ADTouchTracker",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "adapter00": "adapter00@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/ADTouchTracker.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ADTouchTracker/Classes/**/*"
+}
