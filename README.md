@@ -7,7 +7,29 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+tracking is simple!!
+
+you only call `start tracking` to show tracking view 
+
+```
+import ADTouchTracker
+
+ADTouchTracker.startTracking()
+```
+
+you only call `end tracking` to hide tracking view 
+
+```
+ADTouchTracker.endTracking()
+```
+
+and..
+
+
+you can check tracking status
+```
+ADTouchTracker.tracking()
+```
 
 ## Requirements
 
