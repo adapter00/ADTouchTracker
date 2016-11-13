@@ -21,17 +21,24 @@ open class ADTouchTracker {
         self.enableTracking = false
     }
     
+    // did swizzled `SendEvent` and `swizzleEvent`
+    private var methodSwizzled = false 
+    
     /// Singleton instance
     open static var sharedInstance = ADTouchTracker()
     
     /// Enable Tracking Mode
-    fileprivate var enableTracking: Bool = false {
+    open private(set) var enableTracking: Bool = false {
         didSet {
+            guard let keyWindow = UIApplication.shared.keyWindow else {
+                return
+            }
             if enableTracking {
-                guard let keyWindow = UIApplication.shared.keyWindow else {
-                    return
-                }
                 keyWindow.swizzle()
+            }else {
+                keyWindow.swizzle()
+                NotificationCenter.default.removeObserver(self)
+                TouchViewBuilder.sharedInstance.buildByPoint(nil)
             }
         }
     }
@@ -59,7 +66,10 @@ open class ADTouchTracker {
         guard let keyWindow = UIApplication.shared.keyWindow else {
             return
         }
-        keyWindow.swizzle()
+        if enableTracking && !methodSwizzled {
+            keyWindow.swizzle()
+            methodSwizzled = true
+        }
     }
     
 }
