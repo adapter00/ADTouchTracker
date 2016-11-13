@@ -12,7 +12,7 @@ import UIKit
 extension UIWindow {
     /// swizzled Event from  `UIApplication.sendEvent(_)` and Repoonder Chain
     func swizzleEvent(event:UIEvent) {
-        ADTouchTracker.sharedInstance.buildTouchView(from: event)
+        ADTouchTracker.sendEvent(from: event)
         swizzleEvent(event: event)
     }
     

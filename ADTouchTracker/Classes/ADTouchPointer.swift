@@ -13,22 +13,34 @@ import UIKit
 /// Build Tracking Pointer View
 open class ADTouchTracker {
     /// Start Tracking
-    open func startTracking() {
-        self.enableTracking = true
+    open static func startTracking() {
+        self.sharedInstance.enableTracking = true
     }
     /// End Tracking
-    open func stopTracking() {
-        self.enableTracking = false
+    open static func stopTracking() {
+        self.sharedInstance.enableTracking = false
     }
     
+    /// Is Tracking
+    open static var tracking:Bool {
+        return self.sharedInstance.enableTracking
+    }
+    
+    open static func sendEvent(from:UIEvent) {
+        return self.sharedInstance.sendEvent(from: from)
+    }
+    
+    //MARK: private methods
+    
+    
     // did swizzled `SendEvent` and `swizzleEvent`
-    private var methodSwizzled = false 
+    private var methodSwizzled = false
     
     /// Singleton instance
-    open static var sharedInstance = ADTouchTracker()
+    private static var sharedInstance = ADTouchTracker()
     
     /// Enable Tracking Mode
-    open private(set) var enableTracking: Bool = false {
+    private(set) var enableTracking: Bool = false {
         didSet {
             guard let keyWindow = UIApplication.shared.keyWindow else {
                 return
@@ -48,7 +60,7 @@ open class ADTouchTracker {
     }
     
     /// Build touch view from UIEvent
-    internal func buildTouchView(from : UIEvent) {
+    private func sendEvent(from : UIEvent) {
         if from.type == UIEventType.touches {
             guard let keyWindow = UIApplication.shared.keyWindow,let touches = from.allTouches else {
                 return

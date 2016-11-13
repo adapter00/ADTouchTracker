@@ -61,7 +61,7 @@ enum TestCell:String {
                 viewController.present(next, animated: true, completion: nil)
             }
         case .resetTracking:
-            ADTouchTracker.sharedInstance.enableTracking ? ADTouchTracker.sharedInstance.stopTracking():ADTouchTracker.sharedInstance.startTracking()
+            ADTouchTracker.tracking ? ADTouchTracker.stopTracking():ADTouchTracker.startTracking()
         }
     }
 }
