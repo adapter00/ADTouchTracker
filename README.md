@@ -1,9 +1,15 @@
 # ADTouchTracker
 
+ADTouchTraker is a Pure Swift Libray.
+
+This Library use it to know how to tap with test application
+
+
 [![CI Status](http://img.shields.io/travis/adapter00/ADTouchTracker.svg?style=flat)](https://travis-ci.org/adapter00/ADTouchTracker)
 [![Version](https://img.shields.io/cocoapods/v/ADTouchTracker.svg?style=flat)](http://cocoapods.org/pods/ADTouchTracker)
 [![License](https://img.shields.io/cocoapods/l/ADTouchTracker.svg?style=flat)](http://cocoapods.org/pods/ADTouchTracker)
 [![Platform](https://img.shields.io/cocoapods/p/ADTouchTracker.svg?style=flat)](http://cocoapods.org/pods/ADTouchTracker)
+
 
 ## Example
 
