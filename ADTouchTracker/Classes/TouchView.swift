@@ -16,11 +16,7 @@ internal class TouchViewBuilder {
     fileprivate var viewHolder = [TapFingerView]()
     fileprivate init() { }
     
-    func buildByPoint(_ points:[CGPoint]?) -> [TapFingerView] {
-        guard let p = points else{
-            self.viewHolder.forEach{ $0.removeFromSuperview()}
-            return [TapFingerView]()
-        }
+    func buildByPoint(_ points:[CGPoint]) -> [TapFingerView] {
         self.viewHolder.forEach{ $0.removeFromSuperview()}
         self.viewHolder = p.flatMap{
             let view = TapFingerView(frame: CGRect(origin: $0, size: viewSize))
@@ -28,6 +24,10 @@ internal class TouchViewBuilder {
             return view
         }
         return self.viewHolder
+    }
+    
+    func resetTouchView() {
+        self.viewHolder.forEach{ $0.removeFromSuperview()}
     }
 }
 

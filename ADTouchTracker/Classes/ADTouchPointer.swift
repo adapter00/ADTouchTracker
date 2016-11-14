@@ -50,7 +50,7 @@ open class ADTouchTracker {
             }else {
                 keyWindow.swizzle()
                 NotificationCenter.default.removeObserver(self)
-                TouchViewBuilder.sharedInstance.buildByPoint(nil)
+                TouchViewBuilder.sharedInstance.resetTouchView()
             }
         }
     }
@@ -65,7 +65,7 @@ open class ADTouchTracker {
             guard let keyWindow = UIApplication.shared.keyWindow,let touches = from.allTouches else {
                 return
             }
-            TouchViewBuilder.sharedInstance.buildByPoint(touches.filter{ !($0.phase == UITouchPhase.cancelled || $0.phase == UITouchPhase.ended)}.flatMap{ return $0.location(in: keyWindow)}).forEach{
+           TouchViewBuilder.sharedInstance.buildByPoint(touches.filter{ !($0.phase == UITouchPhase.cancelled || $0.phase == UITouchPhase.ended)}.flatMap{ return $0.location(in: keyWindow)}).forEach{
                 keyWindow.addSubview($0)
             }
         }

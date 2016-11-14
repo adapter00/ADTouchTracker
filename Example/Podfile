@@ -1,21 +1,21 @@
 use_frameworks!
 
 target 'ADTouchTracker_Example' do
-  pod 'ADTouchTracker', :path => '../'
+    pod 'ADTouchTracker', :path => '../'
 
-  target 'ADTouchTracker_Tests' do
-    inherit! :search_paths
+    target 'ADTouchTracker_Tests' do
+        inherit! :search_paths
 
-    pod 'Quick'
-  pod 'Nimble', '~> 5.0'
-  pod 'FBSnapshotTestCase'
-  pod 'Nimble-Snapshots'
-  end
-  post_install do |installer|
-    installer.pods_project.targets.each do |target|
-          target.build_configurations.each do |config|
-                    config.build_settings['SWIFT_VERSION'] = '3.0'
-                          end
-                             end
-                             end
+        pod 'Quick'
+        pod 'Nimble', '~> 5.0'
+        pod 'FBSnapshotTestCase'
+        pod 'Nimble-Snapshots'
+    end
+    post_install do |installer|
+        installer.pods_project.targets.each do |target|
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '3.0'
+            end
+        end
+    end
 end
